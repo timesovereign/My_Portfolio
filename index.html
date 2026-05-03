@@ -14,8 +14,8 @@
       --teal:     #00ffe0;
       --emerald:  #00ff88;
       --violet:   #a855f7;
-      --text:     #cce8e0;
-      --muted:    #3d6b62;
+      --text:     #e8f5f2;
+      --muted:    #8bb8b0;
       --border:   rgba(0,255,224,0.08);
     }
 
@@ -102,9 +102,9 @@
 
     nav a {
       text-decoration: none;
-      color: var(--muted);
+      color: #7ecfbf;
       font-family: 'Share Tech Mono', monospace;
-      font-size: 0.78rem;
+      font-size: 0.85rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       transition: all 0.2s;
@@ -190,8 +190,8 @@
 
     .hero-sub {
       max-width: 560px;
-      font-size: 0.95rem;
-      color: var(--muted);
+      font-size: 1.05rem;
+      color: #9dd4c8;
       margin-bottom: 3rem;
       opacity: 0;
       animation: fadeUp 0.8s ease forwards 0.5s;
@@ -293,9 +293,11 @@
     .section-title {
       font-family: 'Orbitron', monospace;
       font-weight: 900;
-      font-size: clamp(1.6rem, 3vw, 2.8rem);
+      font-size: clamp(2rem, 4vw, 3.4rem);
       letter-spacing: 0.06em;
       margin-bottom: 3rem;
+      color: var(--text);
+      text-shadow: 0 0 30px rgba(0,255,224,0.15);
     }
 
     /* ABOUT */
@@ -307,9 +309,9 @@
     }
 
     .about-text p {
-      color: var(--muted);
+      color: #9dd4c8;
       margin-bottom: 1.2rem;
-      font-size: 1rem;
+      font-size: 1.05rem;
       line-height: 1.85;
     }
 
@@ -391,12 +393,64 @@
 
     .skill-category h3 {
       font-family: 'Orbitron', monospace;
-      font-size: 0.75rem;
+      font-size: 0.85rem;
       font-weight: 700;
       letter-spacing: 0.1em;
       margin-bottom: 1.2rem;
       color: var(--teal);
       text-transform: uppercase;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 3rem;
+    }
+
+    .contact-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 1.8rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      transition: all 0.3s;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--teal), var(--violet));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .contact-card:hover { border-color: rgba(0,255,224,0.25); transform: translateY(-3px); box-shadow: 0 0 25px rgba(0,255,224,0.06); }
+    .contact-card:hover::before { opacity: 1; }
+
+    .contact-icon { font-size: 1.8rem; }
+
+    .contact-info { display: flex; flex-direction: column; gap: 0.2rem; }
+
+    .contact-label {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--emerald);
+    }
+
+    .contact-value {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 1rem;
+      color: var(--text);
+      font-weight: 400;
     }
 
     .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
@@ -468,11 +522,12 @@
     .project-title {
       font-family: 'Orbitron', monospace;
       font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 1rem;
       letter-spacing: 0.06em;
+      color: var(--text);
     }
 
-    .project-desc { color: var(--muted); font-size: 0.88rem; line-height: 1.7; }
+    .project-desc { color: #9dd4c8; font-size: 0.95rem; line-height: 1.7; }
     .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto; }
 
     .project-link {
@@ -683,10 +738,32 @@
     </div>
   </section>
 
+  <!-- CONTACT -->
+  <section id="contact">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">CONTACT_INIT</h2>
+    <div class="contact-grid">
+      <a href="mailto:mr.safavieh.ml.ai@gmail.com" class="contact-card">
+        <div class="contact-icon">📧</div>
+        <div class="contact-info">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">mr.safavieh.ml.ai@gmail.com</span>
+        </div>
+      </a>
+      <a href="https://github.com/timesovereign" target="_blank" class="contact-card">
+        <div class="contact-icon">⚡</div>
+        <div class="contact-info">
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">github.com/timesovereign</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
   <!-- FOOTER -->
-  <footer id="contact">
+  <footer>
     <span>© 2026 MILAD_RYAN_SAFAVIEH :: ALL RIGHTS RESERVED</span>
-    <span>SYSTEM v1.0 :: BUILT WITH HTML & CSS</span>
+    <span>SYSTEM v2.0 :: BUILT WITH HTML & CSS</span>
   </footer>
 
   <script>
